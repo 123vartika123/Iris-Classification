@@ -15,47 +15,55 @@ Visualization: Pair plots are used to visualize relationships between features a
 3. Data Cleaning:
 
 Missing Values Check: The dataset is checked for missing values. The Iris dataset is clean and doesn’t have missing values, so no imputation is required.
+
 4. Feature Engineering:
 
 Standardization: Features are standardized using StandardScaler to ensure all features contribute equally to the model. This step scales the features to have zero mean and unit variance.
+
 5. Data Splitting:
 
 Training and Testing Sets: The dataset is split into training (70%) and testing (30%) sets to evaluate model performance.
+
 6. Model Selection:
 
 Random Forest Classifier: A Random Forest model is chosen for its effectiveness in handling classification tasks and providing feature importance. It aggregates the results from multiple decision trees to improve classification accuracy.
+
 7. Model Training:
 
 Training: The Random Forest model is trained using the training set.
+
 8. Hyperparameter Tuning:
 
 Grid Search: GridSearchCV is used to find the optimal hyperparameters for the Random Forest model, including n_estimators, max_features, max_depth, and criterion. The best parameters found are:
+
 Criterion: entropy
 Max Depth: 4
 Max Features: log2
 Number of Estimators: 50
+
 9. Model Evaluation:
 
-Performance Metrics: The best model is evaluated on the test set:
+Performance Metrics: The best model is evaluated on the test set.
 Confusion Matrix: Shows perfect classification with no misclassifications.
-lua
-Copy code
+
 [[19  0  0]
  [ 0 13  0]
  [ 0  0 13]]
+
 Classification Report: All metrics (precision, recall, F1-score) are 1.00, indicating flawless performance.
-markdown
-Copy code
               precision    recall  f1-score   support
-   0       1.00      1.00      1.00        19
-   1       1.00      1.00      1.00        13
-   2       1.00      1.00      1.00        13
+         0       1.00      1.00      1.00        19
+         1       1.00      1.00      1.00        13
+         2       1.00      1.00      1.00        13
+
 Accuracy: The model achieves 100% accuracy on the test set.
+
 10. Cross-Validation:
 
 Scores: Cross-validation is performed to evaluate the model's stability across different subsets of the dataset.
 Scores: [0.96666667, 0.96666667, 0.93333333, 0.96666667, 1.0]
 Mean Score: 0.9666666666666668, showing high performance consistency.
+
 11. Improvement and Future Work:
 
 Model Exploration: Consider experimenting with other models such as Support Vector Machines, Gradient Boosting, or Neural Networks.
